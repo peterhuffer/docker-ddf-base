@@ -62,12 +62,6 @@ if [ -n "$UNINSTALL_FEATURES" ]; then
   done
 fi
 
-# TODO: add more fine grained ldap configuration support
-if [ -n "$LDAP_HOST" ]; then
-  echo "Copying LDAP configs"
-  cp $ENTRYPOINT_HOME/config/ldap/*.config $APP_HOME/etc/
-fi
-
 if [ -d "$ENTRYPOINT_HOME/post" ]; then
   for f in "$ENTRYPOINT_HOME/post/*";
     do
